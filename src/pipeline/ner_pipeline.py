@@ -92,8 +92,8 @@ class NERPipeline:
         return value, 0.5
 
     def _similarity(self, s1: str, s2: str) -> float:
+        # TODO
         # Implement a string similarity measure here
-        # This is a simple example, you might want to use a more sophisticated method
         return len(set(s1.lower()) & set(s2.lower())) / max(len(s1), len(s2))
 
     def process_batch(self, texts: List[str], sector: str) -> List[Dict[str, Tuple[str, float]]]:
