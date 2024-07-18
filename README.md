@@ -61,46 +61,46 @@ This script will process URLs from the specified CSV file and save the extracted
 This will process the ingested data, perform NER, apply rules, and store the structured data in the database.
 
 ## Project Structure
-ldes-data-pipeline/
+ldes-data-pipeline/<br>
+│<br>
+├── data/<br>
+│   ├── raw/<br>
+│   ├── processed/<br>
+│   └── annotated/<br>
+│<br>
+├── models/<br>
+│   └── spacy_ner/<br>
+│<br>
+├── src/<br>
+│   ├── data/<br>
+│   │   ├── ingestion.py<br>
+│   │   └── annotation.py<br>
+│   ├── pipeline/<br>
+│   │   ├── ner_pipeline.py<br>
+│   │   ├── rule_based_extraction.py<br>
+│   │   ├── data_cleaning.py<br>
+│   │   └── data_validation.py<br>
+│   ├── database/<br>
+│   │   └── db_operations.py<br>
+│   └── utils/<br>
+│       └── helpers.py<br>
 │
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── annotated/
-│
-├── models/
-│   └── spacy_ner/
-│
-├── src/
-│   ├── data/
-│   │   ├── ingestion.py
-│   │   └── annotation.py
-│   ├── pipeline/
-│   │   ├── ner_pipeline.py
-│   │   ├── rule_based_extraction.py
-│   │   ├── data_cleaning.py
-│   │   └── data_validation.py
-│   ├── database/
-│   │   └── db_operations.py
-│   └── utils/
-│       └── helpers.py
-│
-├── configs/
-│   ├── config.yaml
-│   ├── fields.json
-│   └── categories.json
-│
-├── tests/
-│
-├── logs/
-│
-├── requirements.txt
-├── main.py
-├── Dockerfile
-├── docker-compose.yml
-├── Jenkinsfile
-└── README.md
-## Testing
+├── configs/<br>
+│   ├── config.yaml<br>
+│   ├── fields.json<br>
+│   └── categories.json<br>
+│<br>
+├── tests/<br>
+│<br>
+├── logs/<br>
+│<br>
+├── requirements.txt<br>
+├── main.py<br>
+├── Dockerfile<br>
+├── docker-compose.yml<br>
+├── Jenkinsfile<br>
+└── README.md<br>
+## Testing<br>
 
 Run the test suite:
 `python -m unittest discover tests`
