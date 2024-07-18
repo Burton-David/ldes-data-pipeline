@@ -23,10 +23,10 @@ sectors:
 
 database:
   host: localhost
-  port: 5432
-  name: ldes_data
-  user: ldes_user
-  password: password
+  port: ${port}
+  name: ${db_name}
+  user: ${db_user}
+  password: ${db_password}
 
 ingestion:
   url_columns:
