@@ -1,3 +1,6 @@
+# TODO
+# Add more field types and corresponding functions as needed
+# Currently minimal checks will update as notice junk slipping through
 import re
 import json
 from typing import Dict, Any
@@ -12,7 +15,6 @@ def get_cleaning_function(field_type):
         'date': standardize_date,
         'capacity': standardize_capacity,
         'cost': standardize_cost,
-        # Add more field types and corresponding functions as needed
     }
     return cleaning_functions.get(field_type, lambda x: x)  # Default to identity function
 
