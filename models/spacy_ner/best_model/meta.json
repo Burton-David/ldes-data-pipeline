@@ -1,0 +1,63 @@
+{
+  "lang":"en",
+  "name":"pipeline",
+  "version":"0.0.0",
+  "spacy_version":">=3.7.5,<3.8.0",
+  "description":"",
+  "author":"",
+  "email":"",
+  "url":"",
+  "license":"",
+  "spacy_git_version":"a6d0fc360",
+  "vectors":{
+    "width":0,
+    "vectors":0,
+    "keys":0,
+    "name":null,
+    "mode":"default"
+  },
+  "labels":{
+    "ner":[
+      "Abandoned date",
+      "Announced date",
+      "Application",
+      "Completed date",
+      "Construction date",
+      "Developer",
+      "Discharging Power Capacity (MW)",
+      "Duration (Hours)",
+      "EPC",
+      "Energy Capacity (MWh)",
+      "Expected COD year",
+      "Financing Provider",
+      "Funding",
+      "Internal note",
+      "Internal status",
+      "Key contact",
+      "Location",
+      "Offtaker",
+      "Operational date",
+      "Permitted date",
+      "Project Description",
+      "Project name",
+      "Project nickname",
+      "Stage",
+      "Status",
+      "Tech provider",
+      "Technology",
+      "Technology product",
+      "Total Cost (Capex)",
+      "Type",
+      "url"
+    ]
+  },
+  "pipeline":[
+    "ner"
+  ],
+  "components":[
+    "ner"
+  ],
+  "disabled":[
+
+  ]
+}

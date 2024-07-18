@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  ldes_ner:
+    restart: unless-stopped
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    build: .
+    env_file: .env.docker
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    ports:
+    - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    restart: unless-stopped
+    image: postgres:13
+    env_file: .env.docker
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ldes_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=ldes_data
+      - POSTGRES_USER=ldes_user
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+volumes:
+  postgres_data:
