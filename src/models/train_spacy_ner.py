@@ -7,6 +7,8 @@ import random
 import logging
 from tqdm import tqdm
 import sys
+import argparse
+from sklearn.model_selection import train_test_split
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -133,8 +135,6 @@ def main(data_dir, output_dir, n_iter=100):
     logging.info("Training complete!")
 
 if __name__ == "__main__":
-    import argparse
-    from sklearn.model_selection import train_test_split
     
     parser = argparse.ArgumentParser(description="Train a custom spaCy NER model")
     parser.add_argument("--data_dir", type=str, required=True, help="Directory containing annotated .spacy files")
