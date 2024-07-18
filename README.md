@@ -104,7 +104,9 @@ ldes-data-pipeline/
 ├── docker-compose.yml
 ├── Jenkinsfile
 └── README.md
-## Testing<br>
+```
+
+## Testing
 
 Run the test suite:
 `python -m unittest discover tests`
