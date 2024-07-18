@@ -78,5 +78,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# Specific to your project
-models/spacy_ner/best_model/ner/model
+*.dylib
+*.pyc
+data/
+logs/venv311/
+*.dylib
