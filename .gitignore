@@ -24,4 +24,7 @@ data/annotated/
 
 # OS generated files
 .DS_Store
-Thumbs.db
+Thumbs.dbvenv311/
+*.pyc
+__pycache__/
+.DS_Store
