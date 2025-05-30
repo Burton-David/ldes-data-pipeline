@@ -1,0 +1,50 @@
+# LDES Data Pipeline Configuration
+# Copy this to config.yaml and customize for your environment
+
+data:
+  raw_dir: "data/raw"              # Directory for input documents (PDFs, URLs)
+  processed_dir: "data/processed"  # Cleaned and structured data
+  annotated_dir: "data/annotated"  # Training data for model improvements
+  sources_csv: "data/sources.csv"  # CSV with URLs to process
+
+models:
+  spacy_ner_dir: "models/spacy_ner/best_model"  # Custom LDES-trained spaCy model
+
+pipeline:
+  batch_size: 32          # Documents to process in each batch
+  max_length: 512         # Maximum token length for NLP processing
+  max_workers: 4          # Concurrent document processing threads
+
+openai:
+  api_key: ${OPENAI_API_KEY}    # Set in environment variables
+  model: "gpt-3.5-turbo"        # GPT model for complex energy terminology
+
+# Energy sectors to process (add new sectors as needed)
+sectors:
+  - ldes              # Long Duration Energy Storage
+  - geothermal        # Geothermal energy projects
+  - carbon_capture    # CCUS projects
+  - green_steel       # Industrial decarbonization
+
+# Database configuration for storing structured project data
+database:
+  host: localhost
+  port: 5432
+  name: ldes_projects
+  user: your_db_user
+  password: your_db_password
+
+# Document ingestion settings
+ingestion:
+  url_columns:
+    - "url1"          # CSV columns containing URLs to process
+    - "url2"
+    - "url3"
+  chunk_size: 50      # URLs to process in each batch
+  chunk_delay: 5      # Seconds between batches (rate limiting)
+
+# Logging configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file: "logs/ldes_pipeline.log"
